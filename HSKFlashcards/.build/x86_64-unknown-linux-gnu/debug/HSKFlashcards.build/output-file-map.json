@@ -1,0 +1,11 @@
+{
+  "": {
+    "swift-dependencies": "/workspaces/HSK-Flashcards-IOS/HSKFlashcards/.build/x86_64-unknown-linux-gnu/debug/HSKFlashcards.build/master.swiftdeps"
+  },
+  "/workspaces/HSK-Flashcards-IOS/HSKFlashcards/Sources/HSKFlashcards/main.swift": {
+    "dependencies": "/workspaces/HSK-Flashcards-IOS/HSKFlashcards/.build/x86_64-unknown-linux-gnu/debug/HSKFlashcards.build/main.d",
+    "object": "/workspaces/HSK-Flashcards-IOS/HSKFlashcards/.build/x86_64-unknown-linux-gnu/debug/HSKFlashcards.build/main.swift.o",
+    "swiftmodule": "/workspaces/HSK-Flashcards-IOS/HSKFlashcards/.build/x86_64-unknown-linux-gnu/debug/HSKFlashcards.build/main~partial.swiftmodule",
+    "swift-dependencies": "/workspaces/HSK-Flashcards-IOS/HSKFlashcards/.build/x86_64-unknown-linux-gnu/debug/HSKFlashcards.build/main.swiftdeps"
+  }
+}

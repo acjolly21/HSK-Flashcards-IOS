@@ -1,0 +1,62 @@
+client:
+  name: basic
+tools: {}
+targets:
+  "HSKFlashcards-debug.exe": ["<HSKFlashcards-debug.exe>"]
+  "HSKFlashcards-debug.module": ["<HSKFlashcards-debug.module>"]
+  "PackageStructure": ["<PackageStructure>"]
+  "main": ["<HSKFlashcards-debug.exe>","<HSKFlashcards-debug.module>"]
+  "test": ["<HSKFlashcards-debug.exe>","<HSKFlashcards-debug.module>"]
+default: "main"
+nodes:
+  "/workspaces/HSK-Flashcards-IOS/HSKFlashcards/Sources/HSKFlashcards/":
+    is-directory-structure: true
+    content-exclusion-patterns: [".git",".build"]
+commands:
+  "/workspaces/HSK-Flashcards-IOS/HSKFlashcards/.build/x86_64-unknown-linux-gnu/debug/HSKFlashcards.build/HSKFlashcards.swiftmodule.o":
+    tool: shell
+    inputs: ["/workspaces/HSK-Flashcards-IOS/HSKFlashcards/.build/x86_64-unknown-linux-gnu/debug/HSKFlashcards.swiftmodule"]
+    outputs: ["/workspaces/HSK-Flashcards-IOS/HSKFlashcards/.build/x86_64-unknown-linux-gnu/debug/HSKFlashcards.build/HSKFlashcards.swiftmodule.o"]
+    description: "Wrapping AST for HSKFlashcards for debugging"
+    args: ["/usr/local/swift/usr/bin/swiftc","-modulewrap","/workspaces/HSK-Flashcards-IOS/HSKFlashcards/.build/x86_64-unknown-linux-gnu/debug/HSKFlashcards.swiftmodule","-o","/workspaces/HSK-Flashcards-IOS/HSKFlashcards/.build/x86_64-unknown-linux-gnu/debug/HSKFlashcards.build/HSKFlashcards.swiftmodule.o","-target","x86_64-unknown-linux-gnu"]
+
+  "<HSKFlashcards-debug.exe>":
+    tool: phony
+    inputs: ["/workspaces/HSK-Flashcards-IOS/HSKFlashcards/.build/x86_64-unknown-linux-gnu/debug/HSKFlashcards"]
+    outputs: ["<HSKFlashcards-debug.exe>"]
+
+  "<HSKFlashcards-debug.module>":
+    tool: phony
+    inputs: ["/workspaces/HSK-Flashcards-IOS/HSKFlashcards/.build/x86_64-unknown-linux-gnu/debug/HSKFlashcards.build/main.swift.o","/workspaces/HSK-Flashcards-IOS/HSKFlashcards/.build/x86_64-unknown-linux-gnu/debug/HSKFlashcards.swiftmodule"]
+    outputs: ["<HSKFlashcards-debug.module>"]
+
+  "C.HSKFlashcards-debug.exe":
+    tool: shell
+    inputs: ["/workspaces/HSK-Flashcards-IOS/HSKFlashcards/.build/x86_64-unknown-linux-gnu/debug/HSKFlashcards.build/HSKFlashcards.swiftmodule.o","/workspaces/HSK-Flashcards-IOS/HSKFlashcards/.build/x86_64-unknown-linux-gnu/debug/HSKFlashcards.build/main.swift.o"]
+    outputs: ["/workspaces/HSK-Flashcards-IOS/HSKFlashcards/.build/x86_64-unknown-linux-gnu/debug/HSKFlashcards"]
+    description: "Linking ./.build/x86_64-unknown-linux-gnu/debug/HSKFlashcards"
+    args: ["/usr/local/swift/usr/bin/swiftc","-L","/workspaces/HSK-Flashcards-IOS/HSKFlashcards/.build/x86_64-unknown-linux-gnu/debug","-o","/workspaces/HSK-Flashcards-IOS/HSKFlashcards/.build/x86_64-unknown-linux-gnu/debug/HSKFlashcards","-module-name","HSKFlashcards","-emit-executable","-Xlinker","--defsym","-Xlinker","main=HSKFlashcards_main","-Xlinker","-rpath=$ORIGIN","@/workspaces/HSK-Flashcards-IOS/HSKFlashcards/.build/x86_64-unknown-linux-gnu/debug/HSKFlashcards.product/Objects.LinkFileList","-target","x86_64-unknown-linux-gnu"]
+
+  "C.HSKFlashcards-debug.module":
+    tool: swift-compiler
+    inputs: ["/workspaces/HSK-Flashcards-IOS/HSKFlashcards/Sources/HSKFlashcards/main.swift"]
+    outputs: ["/workspaces/HSK-Flashcards-IOS/HSKFlashcards/.build/x86_64-unknown-linux-gnu/debug/HSKFlashcards.build/main.swift.o","/workspaces/HSK-Flashcards-IOS/HSKFlashcards/.build/x86_64-unknown-linux-gnu/debug/HSKFlashcards.swiftmodule"]
+    executable: "/usr/local/swift/usr/bin/swiftc"
+    module-name: "HSKFlashcards"
+    module-output-path: "/workspaces/HSK-Flashcards-IOS/HSKFlashcards/.build/x86_64-unknown-linux-gnu/debug/HSKFlashcards.swiftmodule"
+    import-paths: ["/workspaces/HSK-Flashcards-IOS/HSKFlashcards/.build/x86_64-unknown-linux-gnu/debug"]
+    temps-path: "/workspaces/HSK-Flashcards-IOS/HSKFlashcards/.build/x86_64-unknown-linux-gnu/debug/HSKFlashcards.build"
+    objects: ["/workspaces/HSK-Flashcards-IOS/HSKFlashcards/.build/x86_64-unknown-linux-gnu/debug/HSKFlashcards.build/main.swift.o"]
+    other-args: ["-target","x86_64-unknown-linux-gnu","-swift-version","5","-enable-batch-mode","-index-store-path","/workspaces/HSK-Flashcards-IOS/HSKFlashcards/.build/x86_64-unknown-linux-gnu/debug/index/store","-Onone","-enable-testing","-g","-j2","-DSWIFT_PACKAGE","-DDEBUG","-module-cache-path","/workspaces/HSK-Flashcards-IOS/HSKFlashcards/.build/x86_64-unknown-linux-gnu/debug/ModuleCache","-parseable-output","-Xfrontend","-entry-point-function-name","-Xfrontend","HSKFlashcards_main","-color-diagnostics","-DDEBUG","-Xcc","-fPIC","-Xcc","-fno-omit-frame-pointer"]
+    sources: ["/workspaces/HSK-Flashcards-IOS/HSKFlashcards/Sources/HSKFlashcards/main.swift"]
+    is-library: false
+    enable-whole-module-optimization: false
+    num-threads: 2
+
+  "PackageStructure":
+    tool: package-structure-tool
+    inputs: ["/workspaces/HSK-Flashcards-IOS/HSKFlashcards/Sources/HSKFlashcards/","/workspaces/HSK-Flashcards-IOS/HSKFlashcards/Package.swift","/workspaces/HSK-Flashcards-IOS/HSKFlashcards/Package.resolved"]
+    outputs: ["<PackageStructure>"]
+    description: "Planning build"
+    allow-missing-inputs: true
+

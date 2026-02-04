@@ -1,0 +1,134 @@
+{
+  "builtTestProducts" : [
+
+  ],
+  "copyCommands" : {
+
+  },
+  "explicitTargetDependencyImportCheckingMode" : {
+    "none" : {
+
+    }
+  },
+  "generatedSourceTargetSet" : [
+
+  ],
+  "pluginDescriptions" : [
+
+  ],
+  "swiftCommands" : {
+    "C.HSKFlashcards-debug.module" : {
+      "executable" : "/usr/local/swift/usr/bin/swiftc",
+      "importPath" : "/workspaces/HSK-Flashcards-IOS/HSKFlashcards/.build/x86_64-unknown-linux-gnu/debug",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/workspaces/HSK-Flashcards-IOS/HSKFlashcards/Sources/HSKFlashcards/main.swift"
+        }
+      ],
+      "isLibrary" : false,
+      "moduleName" : "HSKFlashcards",
+      "moduleOutputPath" : "/workspaces/HSK-Flashcards-IOS/HSKFlashcards/.build/x86_64-unknown-linux-gnu/debug/HSKFlashcards.swiftmodule",
+      "objects" : [
+        "/workspaces/HSK-Flashcards-IOS/HSKFlashcards/.build/x86_64-unknown-linux-gnu/debug/HSKFlashcards.build/main.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "x86_64-unknown-linux-gnu",
+        "-swift-version",
+        "5",
+        "-enable-batch-mode",
+        "-index-store-path",
+        "/workspaces/HSK-Flashcards-IOS/HSKFlashcards/.build/x86_64-unknown-linux-gnu/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-g",
+        "-j2",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-module-cache-path",
+        "/workspaces/HSK-Flashcards-IOS/HSKFlashcards/.build/x86_64-unknown-linux-gnu/debug/ModuleCache",
+        "-parseable-output",
+        "-Xfrontend",
+        "-entry-point-function-name",
+        "-Xfrontend",
+        "HSKFlashcards_main",
+        "-color-diagnostics",
+        "-DDEBUG",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-fno-omit-frame-pointer"
+      ],
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/workspaces/HSK-Flashcards-IOS/HSKFlashcards/.build/x86_64-unknown-linux-gnu/debug/HSKFlashcards.build/main.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/workspaces/HSK-Flashcards-IOS/HSKFlashcards/.build/x86_64-unknown-linux-gnu/debug/HSKFlashcards.swiftmodule"
+        }
+      ],
+      "sources" : [
+        "/workspaces/HSK-Flashcards-IOS/HSKFlashcards/Sources/HSKFlashcards/main.swift"
+      ],
+      "tempsPath" : "/workspaces/HSK-Flashcards-IOS/HSKFlashcards/.build/x86_64-unknown-linux-gnu/debug/HSKFlashcards.build",
+      "wholeModuleOptimization" : false
+    }
+  },
+  "swiftFrontendCommands" : {
+
+  },
+  "swiftTargetScanArgs" : {
+    "HSKFlashcards" : [
+      "/usr/local/swift/usr/bin/swiftc",
+      "-module-name",
+      "HSKFlashcards",
+      "-incremental",
+      "-c",
+      "/workspaces/HSK-Flashcards-IOS/HSKFlashcards/Sources/HSKFlashcards/main.swift",
+      "-I",
+      "/workspaces/HSK-Flashcards-IOS/HSKFlashcards/.build/x86_64-unknown-linux-gnu/debug",
+      "-target",
+      "x86_64-unknown-linux-gnu",
+      "-swift-version",
+      "5",
+      "-enable-batch-mode",
+      "-index-store-path",
+      "/workspaces/HSK-Flashcards-IOS/HSKFlashcards/.build/x86_64-unknown-linux-gnu/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-g",
+      "-j2",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-module-cache-path",
+      "/workspaces/HSK-Flashcards-IOS/HSKFlashcards/.build/x86_64-unknown-linux-gnu/debug/ModuleCache",
+      "-parseable-output",
+      "-Xfrontend",
+      "-entry-point-function-name",
+      "-Xfrontend",
+      "HSKFlashcards_main",
+      "-color-diagnostics",
+      "-DDEBUG",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-fno-omit-frame-pointer",
+      "-driver-use-frontend-path",
+      "/usr/local/swift/usr/bin/swiftc"
+    ]
+  },
+  "targetDependencyMap" : {
+    "HSKFlashcards" : [
+
+    ]
+  },
+  "testDiscoveryCommands" : {
+
+  },
+  "testEntryPointCommands" : {
+
+  }
+}
